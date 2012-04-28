@@ -1,10 +1,9 @@
 PoliTodo::Application.routes.draw do
-<<<<<<< HEAD
-  devise_for :users
-
-=======
+  devise_for :user
   resources :project
->>>>>>> 8fcc0012b63302e39c6a27fec0eed84a40d7f24c
+
+  root :to => "projects#index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
