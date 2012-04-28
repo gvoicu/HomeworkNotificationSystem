@@ -1,5 +1,5 @@
-PoliTodo::Application.routes.draw do
-  devise_for :user
+  PoliTodo::Application.routes.draw do
+  devise_for :users
   resources :projects
 
   root :to => "projects#index"

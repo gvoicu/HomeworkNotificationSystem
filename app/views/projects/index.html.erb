@@ -96,16 +96,17 @@
             <li><a href="#"><i class="icon-user"></i> <%= current_user.email %></a></li>
             <li class="divider"></li>
             <li>
-            <!-- <a href="/users/sign_out" class="btn span1"><i class="icon-user"></i>Logout</a> -->
+            <%= link_to('Logout', destroy_user_session_path, :method => :delete, :class => "btn span1") %> 
             </li>
           </ul>
   </div>
 
   <div style="padding: 8px 0;" class="well">
-          <ul class="nav nav-list">
+          <ul class="nav nav-list" >
             <li class="nav-header">Another list header</li>
             <li><a href="#"><i class="icon-user"></i> Profile</a></li>
             <li><a href="#"><i class="icon-cog"></i> Settings</a></li>
+            <li><a href="/projects/new"><i class="icon-cog"></i> New Homework</a></li>
             <li class="divider"></li>
             <li><a href="#"><i class="icon-flag"></i> Help</a></li>
           </ul>
