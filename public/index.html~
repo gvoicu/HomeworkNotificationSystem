@@ -4,7 +4,7 @@
 <link rel="javascript" href="bootstrap/js/bootstrap.js">
 <script> $('.dropdown-toggle').dropdown() </script>
 </head>
-<body>
+<body style = "background: url(bootstrap/img/background.jpg) no-repeat; background-size: 100%;">
 
 
 <div class="navbar">
