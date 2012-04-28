@@ -1,0 +1,58 @@
+<div id="page">
+  <div id="sidebar">
+    <ul id="sidebar-items">
+
+    <li>
+      <h3>Sign in"</h3>
+
+      <% unless flash[:notice].blank? %>
+      <p>A fost o eroare la autentificare: <%= flash[:notice] %> </p>
+      <% end %>
+
+      <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+        <div><%= f.label :email %><br />
+        <%= f.email_field :email %></div>
+
+        <div><%= f.label :password %><br />
+        <%= f.password_field :password %></div>
+
+        <% if devise_mapping.rememberable? -%>
+          <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+        <% end -%>
+
+        <div><%= f.submit "Sign in" %></div>
+      <% end %>
+    <li>
+    <li>
+      <h3>Friends</h3>
+      <ul class="links">
+        <li><a href="http://cs.curs.pub.ro">Cursuri Calculatoare</a></li>
+        <li><a href="http://www.rosedu.org">Rosedu</a></li>
+        <li><a href="http://www.ase.ro">ASE</a></li>
+        <li><a href="http://www.exams.ro">Subiecte examene</a></li>
+      </ul>
+    </li>
+    </ul>
+    </div>
+
+  
+    <div id="content">
+        <div id="header">
+          <h1>HOOMIE</h1>
+          <h2>Welcome to the ultimate homework managment tool </h2>
+        </div>
+
+        <div id="about">
+          <h3><a href="#" onclick="about(); return false;">About this product</a>
+          </h3>
+        </div>
+
+        <div id="getting-started">
+          <h1>Getting started</h1>
+          <h2>Here&rsquo;s how to get rolling with us:</h2>
+        </div>
+     </div>
+
+    <div id="footer">&nbsp;</div>
+   </div>
+       <%= render "links" %>
