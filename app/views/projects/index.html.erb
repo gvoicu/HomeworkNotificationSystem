@@ -66,12 +66,24 @@
         <ul>
           <% @projects.each do |project| %>
             <div class="row" >
-              <div class="span2">
-                <%=project.name %>
-              </div>
+              <table >
+              <tr>
+                <td style="padding-right:40px"> 
+                  <font size="4">
+                    <%=project.name %>
+                    </font>
+                </td>
+                <td style="padding-right:40px">
               <span class="label label-important span2"><%= project.deadline.to_s %></span> 
+              </td>
+              <td style="padding-right:40px">
               <input class="btn btn-inverse" type="button" value="Modify">
+            </td>
+            <td style="padding-right:0px">
               <input class="btn btn-inverse" type="button" value="View">
+            </td>
+          </tr>
+          </table>
               </br>
             </div>
           <% end %>
