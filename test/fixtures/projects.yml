@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  project_type: 1
+  subject_id: 
+  deadline: 2012-04-28 20:08:53
+  where: MyString
+  priority: 1
+  other_details: MyString
+
+two:
+  name: MyString
+  project_type: 1
+  subject_id: 
+  deadline: 2012-04-28 20:08:53
+  where: MyString
+  priority: 1
+  other_details: MyString

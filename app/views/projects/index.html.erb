@@ -1,1 +1,116 @@
-<p>Sunt logat: <%= current_user.email %></p>
+<!--
+<html>
+<head>
+<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+<link rel="javascript" href="bootstrap/js/bootstrap.js">
+<script> $('.dropdown-toggle').dropdown() </script>
+</head>
+-->
+
+<div class="navbar">
+    <div class="navbar-inner">
+      <div class="container">
+        <a data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <a href="#" class="brand">Notify me</a>
+        <div class="nav-collapse">
+          <ul class="nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Homework</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Tests and exams</a></li>
+            <li class="dropdown">
+              <a data-toggle="dropdown" class="dropdown-toggle" href="#">School facts<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Introduction to operating systems</a></li>
+                <li><a href="#">Logic Design<</a></li>
+                <li><a href="#">Data structures</a></li>
+								<li class="divider"></li>
+                <li class="nav-header">Nav header</li>
+                <li><a href="#">Object Oriented Programming</a></li>
+                <li><a href="#">Algorithm Design</a></li>
+                <li><a href="#">Programming paradigms</a></li>
+              </ul>
+            </li>
+          </ul>
+          <form action="" class="navbar-search pull-left">
+            <input type="text" placeholder="Search" class="search-query span2">
+          </form>
+          
+				<ul class="nav pull-right">
+            <li class="divider-vertical"></li>
+            <li class="dropdown">
+              <a data-toggle="dropdown" class="dropdown-toggle" href="#">Sort by<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Date</a></li>
+                <li><a href="#">School facts</a></li>
+                <li><a href="#">Priority</a></li>
+              </ul>
+            </li>
+          </ul>
+
+
+        </div><!-- /.nav-collapse -->
+      </div>
+    </div><!-- /navbar-inner -->
+  </div>
+
+<div class = "row">
+<div class = "span8 offset2">
+<div class="hero-unit">
+        <h2>View my current homework tasks</h2>
+				<br>
+        <ul>
+          <% @projects.each do |project| %>
+            <div class="row" >
+              <div class="span2">
+                <%=project.name %>
+              </div>
+              <span class="label label-important span2"><%= project.deadline.to_s %></span> 
+            </div>
+          <% end %>
+          
+        </ul>
+        <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+				<ul class="pager">
+				<li class="previous">
+		    <a href="#">&larr; Older</a>
+    		</li>
+    		<li class="next">
+    		<a href="#">Newer &rarr;</a>
+    		</li>
+    		</ul>
+      </div>
+
+</div class = "span8">
+<div class = "span4">
+  <div style="padding: 8px 0;" class="well">
+          <ul class="nav nav-list">
+            <li class="nav-header">I am logged in as</li>
+            <li><a href="#"><i class="icon-user"></i> <%= current_user.email %></a></li>
+            <li class="divider"></li>
+            <li>
+            <!-- <a href="/users/sign_out" class="btn span1"><i class="icon-user"></i>Logout</a> -->
+            </li>
+          </ul>
+  </div>
+
+  <div style="padding: 8px 0;" class="well">
+          <ul class="nav nav-list">
+            <li class="nav-header">Another list header</li>
+            <li><a href="#"><i class="icon-user"></i> Profile</a></li>
+            <li><a href="#"><i class="icon-cog"></i> Settings</a></li>
+            <li class="divider"></li>
+            <li><a href="#"><i class="icon-flag"></i> Help</a></li>
+          </ul>
+        </div>
+  </div>
+</div>
+
+<!--
+</body>
+</html>
+-->
