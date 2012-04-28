@@ -4,8 +4,8 @@
 <link rel="javascript" href="bootstrap/js/bootstrap.js">
 <script> $('.dropdown-toggle').dropdown() </script>
 </head>
-<body>
-
+<body style = "background: url(bootstrap/img/background2.jpeg) no-repeat; background-size: 100%;">
+   
 
 <div class="navbar">
     <div class="navbar-inner">
@@ -60,20 +60,79 @@
 
 <div class = "row">
 <div class = "span8 offset2">
+<form action="form_action.js" method="get">
 <div class="hero-unit">
-        <h2>View my current homework tasks</h2>
+        <h2>Insert new homework task</h2>
 				<br>
-        <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-				<ul class="pager">
-				<li class="previous">
-		    <a href="#">&larr; Older</a>
-    		</li>
-    		<li class="next">
-    		<a href="#">Newer &rarr;</a>
-    		</li>
-    		</ul>
-      </div>
-
+				<br>
+				<table>
+				<tr>
+				<td >
+				<span class="label label-important" >Name</span> 
+				</td>			
+				<td style = "padding-left: 30px;">				
+				<input type="text" name="name" style="height: 30px; padding-left: 30px;" />
+				</td>				
+				</tr>	
+	
+				<tr>
+				<td>
+				<span class="label label-important">Type</span> 
+				</td>				
+				<td style = "padding-left: 30px;">
+				<input type="text" name="type" style="height: 30px; padding-left: 30px;"/>
+				</td>		
+				</tr>				
+				<tr>
+				<td>		
+				<span class="label label-important">School fact</span> 
+				</td>
+				<td style = "padding-left: 30px;">				
+				<select >
+				<option> Linear Algebra </option>
+				<option> Data structures </option>
+				</select>
+				</td>				
+				</tr>
+				<tr>
+				<td>
+				<span class="label label-important">When</span> 
+				</td>
+				<td style = "padding-left: 30px;">
+				<input type="text" name="when" style="height: 30px; padding-left: 30px;"/>
+				</td>	
+				</tr>				
+				<tr>
+				<td>
+				<span class="label label-important">Where</span> 
+				</td>
+				<td style = "padding-left: 30px;">
+				<input type="text" name="where" style="height: 30px; padding-left: 30px;"/>			
+				</td>
+				</tr>				
+				<tr>
+				<td>
+				<span class="label label-important">Priority</span>       
+				</td>
+				<td style = "padding-left: 30px;">
+				<select >
+				<option> High </option>
+				<option> Medium </option>
+				<option> Low </option>
+				</select>
+				</td>
+				</tr>				
+				<tr>		
+				<td>
+				<span class="label label-important">Other details</span>       
+				</td>
+				<td style = "padding-left: 30px;">				
+				<input type="textarea" name="other" style="height: 30px; padding-left: 30px;"/>				
+				</td>	
+				</tr>			
+				</table>
+</div>
+</form> 
 </div class = "span8">
 <div class = "span4">
 <div style="padding: 8px 0;" class="well">
