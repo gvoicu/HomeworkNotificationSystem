@@ -56,9 +56,16 @@
         <h2>My homework tasks</h2>
 				<br>
         <ul>
+	<table align="center" class="table table-striped">
+		<thead>
+			<tr>
+			<th>Title </th>
+			<th> Deadline</th>
+<th>Title </th>
+			</tr>
+		</thead>
           <% @projects.each do |project| %>
-            <div class="row" >
-              <table >
+              
               <tr>
                 <td style="padding-right:10px"> 
                   <font size="4">
@@ -66,24 +73,21 @@
                     </font>
                 </td>
                 <td style="padding-right:10px">
-                 <span class="label label-important span2"><%= project.deadline.to_s %></span> 
+                 <span class="label label"><%= project.deadline.to_s %></span> 
                 </td>
                 <td style="padding-right:10px">
-                 <input class="btn btn-inverse" type="button" value="Modify" id="modify_index">
+                 <input class="btn btn-success" type="button" value="Modify" id="modify_index">
                 </td>
                 <td style="padding-right:10px">
-                  <a href="/projects/<%=project.id%>" class="btn btn-inverse" type="button" >View </a>
+                  <a href="/projects/<%=project.id%>" class="btn btn-primary" type="button" >View </a>
                 </td>
-                <td style="padding-right:10px">
-                  <%= link_to('Delete',"/projects/#{project.id}" , :method => :delete, :class => "btn span1") %> 
+                <td style="padding-right:	0px">
+                  <%=  link_to('Delete',"/projects/#{project.id}" , :method => :delete, :class => "btn btn-danger") %> 
                 </td>
+
               </tr>
-              
-          </table>
-              </br>
-            </div>
           <% end %>
-          
+	</table>          
         </ul>
    
 				<ul class="pager">
