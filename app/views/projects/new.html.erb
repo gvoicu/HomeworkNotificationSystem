@@ -54,7 +54,7 @@
 <div class = "span8 offset2">
 
 <div class="hero-unit">
-<form action="/projects" method="post">
+  <%= form_tag ({:controller => "projects", :action => "create"}), ({:method => "POST"}) do %>
         <h2>Insert new homework task</h2>
 				<br>
 				<br>
@@ -127,7 +127,7 @@
 					</tr>		
 				</table>
         <input style="float:right;" class="badge badge-inverse" type="submit" value="Add it!" />
-	</form>
+  <% end %>
 </div>
 </div> 
 
