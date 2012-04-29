@@ -11,7 +11,7 @@
         <div class="nav-collapse">
           <ul class="nav">
             <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">Homework</a></li>
+            <li><a href="/">Homework</a></li>
             <li><a href="#">Events</a></li>
             <li><a href="#">Tests and exams</a></li>
             <li class="dropdown">
@@ -53,7 +53,7 @@
 <div class = "row">
 <div class = "span8 offset2">
 <div class="hero-unit">
-        <h2>View my current homework tasks</h2>
+        <h2>My homework tasks</h2>
 				<br>
         <ul>
           <% @projects.each do |project| %>
@@ -69,7 +69,7 @@
               <span class="label label-important span2"><%= project.deadline.to_s %></span> 
               </td>
               <td style="padding-right:40px">
-              <input class="btn btn-inverse" type="button" value="Modify" id="modify_index">
+              <a href="/projects/<%= project.id %>/edit" class="btn btn-inverse" type="button" value="Modify" id="modify_index">Modify
             </td>
             <td style="padding-right:0px">
               <a href="/projects/<%=project.id%>" class="btn btn-inverse" type="button" >View </a>
@@ -84,7 +84,7 @@
           <% end %>
           
         </ul>
-        <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+   
 				<ul class="pager">
 				<li class="previous">
 		    <a href="#">&larr; Older</a>
@@ -100,7 +100,7 @@
   <div style="padding: 8px 0;" class="well">
           <ul class="nav nav-list">
             <li class="nav-header">I am logged in as</li>
-            <li><a href="#"><i class="icon-user"></i> <%= current_user.email %></a></li>
+            <li><a href="#"><i class="icon-user"></i> <%= current_user.name %></a></li>
             <li class="divider"></li>
             <li>
             <%= link_to('Logout', destroy_user_session_path, :method => :delete, :class => "btn span1") %> 
@@ -113,7 +113,8 @@
             <li class="nav-header">Another list header</li>
             <li><a href="#"><i class="icon-user"></i> Profile</a></li>
             <li><a href="#"><i class="icon-cog"></i> Settings</a></li>
-            <li><a href="/projects/new"><i class="icon-cog"></i> New Homework</a></li>
+            <li><a href="/projects/new"><i class="icon-cog"></i> New 
+            Homework</a></li>
             <li class="divider"></li>
             <li><a href="#"><i class="icon-flag"></i> Help</a></li>
           </ul>
