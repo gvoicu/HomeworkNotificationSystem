@@ -66,19 +66,19 @@
                     </font>
                 </td>
                 <td style="padding-right:40px">
-              <span class="label label-important span2"><%= project.deadline.to_s %></span> 
-              </td>
-              <td style="padding-right:40px">
-              <input class="btn btn-inverse" type="button" value="Modify" id="modify_index">
-            </td>
-            <td style="padding-right:0px">
-              <a href="/projects/<%=project.id%>" class="btn btn-inverse" type="button" >View </a>
-            </td>
-            <td =stype="padding-right:0px">
-               <%= link_to('Delete',"/projects/#{project.id}" , :method => :delete, :class => "btn span1") %> 
-            </td>
-          </tr>
-          </table>
+                 <span class="label label-important span2"><%= project.deadline.to_s %></span> 
+                </td>
+                <td style="padding-right:40px">
+                 <input class="btn btn-inverse" type="button" value="Modify" id="modify_index">
+                </td>
+                <td style="padding-right:0px">
+                  <a href="/projects/<%=project.id%>" class="btn btn-inverse" type="button" >View </a>
+                </td>
+                <td =stype="padding-right:0px">
+                  <%= link_to('Delete',"/projects/#{project.id}" , :method => :delete, :class => "btn span1") %> 
+                </td>
+              </tr>
+              </table>
               </br>
             </div>
           <% end %>

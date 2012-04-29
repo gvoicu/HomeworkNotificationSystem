@@ -24,7 +24,16 @@ class ProjectsController < ApplicationController
 
 	def show
     @project = Project.where(:id => params[:id]).first
-	end
+
+    @my_tasks = Task.where(:project_id => params[:id])
+    
+    @hash_t = [] 
+    @hash_t[1] = "low"
+    @hash_t[2] = "medium"
+    @hash_t[3] = "high"
+    @hash_t[4] = "Your life depends on it!" 
+  end
+    
 
   def destroy
    Project.delete_all(:id => params[:id])
