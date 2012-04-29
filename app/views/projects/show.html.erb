@@ -1,33 +1,20 @@
-<html>
-<head>
-    <title>Details</title>
-    <style>
-    .container li p {
-        -webkit-transition: all 500ms;
-    }
-    
-    .container li p:hover {
-        padding-left: 25px;
-        font-weight: bold;
-    }
-    </style>
-</head>
-  <body  bgcolor=#E0E6F8>
+
+  <link rel="stylesheet" type="text/css" href="assets/unique_ss/details_style.css"/>
     <div class="container">
             
             <ul>
-            <li>
-            <p>Titlu:  </p>
-            </li>
                 <li>
-                  <p>Materia :  </p>
+                   <p>Titlu: <%= @project.name %> </p>
                 </li>
                 <li>
-                    <p>Tema : <p>
+                  <p>Materia : <%= @project.subject.name %> </p>
+                </li>
+                <li>
+                  <p>Prioriate : <%= @project.priority%><p>
                 </li>
                 <li>
                     <p>Deadline : <script language="JavaScript">
-                    TargetDate = "04/28/2012 5:00 PM";
+                    TargetDate =<%=@project.deadline%>;
                     BackColor = "lightblue";
                     ForeColor = "navy";
                     CountActive = true;
@@ -35,13 +22,24 @@
                     LeadingZero = true;
                     DisplayFormat = "%%D%% Zile, %%H%% Ore, %%M%% Minute, %%S%% Secunde.";
                     FinishMessage = "Tema trebuia predata!!!";
-                    </script> </p>
+                                  </script>
+                    </p>
                    <script language="JavaScript" src="http://scripts.hashemian.com/js/countdown.js"></script>
                 </li>
+                <li>
+                  <p>Enunt: 
+                </i>
             </ul>
             <p style="text-indent: 5em";>
              Enunt   : 
              </p>
     </div>
-    </body>
-</html>
+
+    <%= form_tag ({:controller => "tasks", :action => "create"}), ({:method => "POST"}) do %>
+      <%= hidden_field_tag :user_id, current_user.id %>
+      <%= hidden_field_tag :project_id, @project.id %>
+      <%= text_field_tag :description %>
+      <%= submit_tag %>
+    <% end %>
+    
+    

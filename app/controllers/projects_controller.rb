@@ -23,5 +23,11 @@ class ProjectsController < ApplicationController
 	end
 
 	def show
+    @project = Project.where(:id => params[:id]).first
 	end
+
+  def destroy
+   Project.delete_all(:id => params[:id])
+   redirect_to "/projects"
+  end
 end

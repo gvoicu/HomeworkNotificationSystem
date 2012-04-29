@@ -81,7 +81,7 @@
 				<span class="label label-important">School fact</span> 
 				</td>
 				<td style = "padding-left: 30px;">				
-				<select >
+				<select name="subject_id" >
         <% Subject.all.each do |subject| %>
         <option value =" <%= subject.id %>"> <%= subject.name %> </option>
         <% end %>
