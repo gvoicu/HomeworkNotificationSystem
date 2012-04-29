@@ -9,5 +9,16 @@ class TasksController < ApplicationController
     redirect_to "/projects/#{task.project_id}"
   end
 
+  def mark_as_done
+    task = Task.find(params[:id])
+    task.update_attributes(:status => 1)
+    redirect_to "/projects/#{task.id}"
+  end
+
+  def restart_task
+    task = Task.find(params[:id])
+    task.update_attributes(:status => nil)
+    redirect_to "/projects/#{task.id}"
+  end
 
 end

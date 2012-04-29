@@ -25,7 +25,8 @@ class ProjectsController < ApplicationController
 	def show
     @project = Project.where(:id => params[:id]).first
 
-    @my_tasks = Task.where(:project_id => params[:id])
+    @completed_tasks = Task.where(:project_id => params[:id], :status => 1)
+    @uncompleted_tasks = Task.where(:project_id => params[:id], :status => [0, nil])
     
     @hash_t = [] 
     @hash_t[1] = "low"

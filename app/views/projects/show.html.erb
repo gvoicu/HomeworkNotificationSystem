@@ -87,12 +87,33 @@
     </div>
 
     <div id="tasks">
-      <ul>
-        <% @my_tasks.each do |task| %>
-            <li>Task: <%=task.description%>
-          </li>
+      <% if @uncompleted_tasks.size > 0 %>
+        <p>Uncompleted Tasks</p>
+          <% @uncompleted_tasks.each do |task| %>
+            <div class="row">
+              <div class="span5">
+                <%=task.description %>
+              </div>
+              <div class="span1">
+                <%= link_to "Done it!", "/tasks/#{task.id}/mark_as_done" %>
+              </div>
+            </div>
+          <% end %>
+      <% end %>
+
+      <% if @completed_tasks.size > 0 %>
+        <p>Completed Tasks</p>
+          <% @completed_tasks.each do |task| %>
+            <div class="row">
+              <div class="span5">
+                <strike><%= task.description %></strike>
+              </div>
+              <div class="span1">
+                <%= link_to "Restart", "/tasks/#{task.id}/restart_task" %>
+              </div>
+            </div>
           <%end %>
-      </ul>
+      <% end %>
     </div>
 
     <%= form_tag ({:controller => "tasks", :action => "create"}), ({:method =>  :post}) do %>

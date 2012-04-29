@@ -4,6 +4,9 @@
   resources :projects
   resources :tasks
 
+  match "/tasks/:id/mark_as_done" => "tasks#mark_as_done"
+  match "/tasks/:id/restart_task" => "tasks#restart_task"
+
   root :to => "projects#index"
 
   # The priority is based upon order of creation:
