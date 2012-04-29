@@ -1,5 +1,4 @@
   PoliTodo::Application.routes.draw do
-  get "tasks/create"
 
   devise_for :users
   resources :projects
