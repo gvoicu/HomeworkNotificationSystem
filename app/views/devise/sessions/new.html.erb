@@ -43,8 +43,13 @@
         </div>
 
         <div id="about">
-          <h3><a href="#" onclick="about(); return false;">About this product</a>
+          <h3><a href="#" id="fadeInAbout" >About this product</a>
           </h3>
+          <div id="fadeInDiv">
+          <p style="display:none" class="textF"> Created by: WebDev </p>
+          <p style="display:none" class="textF"> Autori: </p>
+          <input style="display:none" type="button" value="Close" class="textF" id="buttonClose"/>
+          </div>
         </div>
 
         <div id="getting-started">
@@ -56,3 +61,16 @@
     <div id="footer">&nbsp;</div>
    </div>
        <%= render "links" %>
+       <script>
+        $("#fadeInAbout").click(function() {
+                                $(".textF").fadeIn(1000);
+                                }
+                                );
+       </script>
+       <script>
+        $("#buttonClose").click(function(){
+                                $(".textF").fadeOut(1000);
+                                }
+                                );
+       </script>
+
