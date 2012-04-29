@@ -1,0 +1,157 @@
+
+<div class="navbar">
+    <div class="navbar-inner">
+      <div class="container">
+        <a data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <a href="#" class="brand">Notify me</a>
+        <div class="nav-collapse">
+          <ul class="nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Homework</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Tests and exams</a></li>
+            <li class="dropdown">
+              <a data-toggle="dropdown" class="dropdown-toggle" href="#">School facts<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Introduction to operating systems</a></li>
+                <li><a href="#">Logic Design<</a></li>
+                <li><a href="#">Data structures</a></li>
+								<li class="divider"></li>
+                <li class="nav-header">Nav header</li>
+                <li><a href="#">Object Oriented Programming</a></li>
+                <li><a href="#">Algorithm Design</a></li>
+                <li><a href="#">Programming paradigms</a></li>
+              </ul>
+            </li>
+          </ul>
+          <form action="" class="navbar-search pull-left">
+            <input type="text" placeholder="Search" class="search-query span2">
+          </form>
+          
+				<ul class="nav pull-right">
+            <li class="divider-vertical"></li>
+            <li class="dropdown">
+              <a data-toggle="dropdown" class="dropdown-toggle" href="#">Sort by<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Date</a></li>
+                <li><a href="#">School facts</a></li>
+                <li><a href="#">Priority</a></li>
+              </ul>
+            </li>
+          </ul>
+
+
+        </div><!-- /.nav-collapse -->
+      </div>
+    </div><!-- /navbar-inner -->
+  </div>
+
+<div class = "row">
+<div class = "span8 offset2">
+
+<div class="hero-unit">
+  <%= form_tag ({:controller => "projects", :action => "update"}), ({:method => "PUT"}) do %>
+        <h2>Edit homework task</h2>
+				<br>
+				<br>
+				<table>
+				<tr>
+				<td >
+				<span class="label label-important" >Name</span> 
+				</td>			
+				<td style = "padding-left: 30px;">				
+				<input type="text" name="name" value="<%= @project.name %>" style="height: 30px; padding-left: 30px;" />
+				</td>				
+				</tr>	
+	
+				<tr>
+				<td>
+				<span class="label label-important">Edit Type</span> 
+				</td>				
+				<td style = "padding-left: 30px;">
+				<input type="text" name="type" value="1" style="height: 30px; padding-left: 30px;"/>
+				</td>		
+				</tr>				
+				<tr>
+				<td>		
+				<span class="label label-important">Edit School fact</span> 
+				</td>
+				<td style = "padding-left: 30px;">				
+				<select name="subject_id" >
+                    <% Subject.all.each do |subject| %>
+                        <option value =" <%= subject.id %>"> <%= subject.name %> </option>
+                    <% end %>
+        
+				</select>
+				</td>				
+				</tr>
+				<tr>
+				<td>
+				<span class="label label-important">Edit When</span> 
+				</td>
+				<td style = "padding-left: 30px;">
+				<input type="text" name="when" value="<%= @project.deadline.to_s %>" style="height: 30px; padding-left: 30px;"/>
+				</td>	
+				</tr>				
+				<tr>
+				<td>
+				<span class="label label-important">Edit Where</span> 
+				</td>
+				<td style = "padding-left: 30px;">
+				<input type="text" name="where" value="<%= @project.where %>" style="height: 30px; padding-left: 30px;"/>			
+				</td>
+				</tr>				
+				<tr>
+				<td>
+				<span class="label label-important">Edit Priority</span>       
+				</td>
+				<td style = "padding-left: 30px; value="<%= @project.priority %>">
+				<select >
+				<option> High </option>
+				<option> Medium </option>
+				<option> Low </option>
+				</select>
+				</td>
+				</tr>				
+					<tr>		
+						<td>
+							<span class="label label-important" value="<%= @project.priority %>">Edit Other details</span>       
+						</td>
+						<td style = "padding-left: 30px;">				
+							<textarea  rows="40"  name="other" style="height: 30px; padding-left: 30px;"></textarea>				
+						</td>	
+					</tr>		
+				</table>
+        <input style="float:right;" class="badge badge-inverse" type="submit" value="Add it!" />
+  <% end %>
+</div>
+</div> 
+
+<div class = "span4">
+
+<div style="padding: 8px 0;" class="well">
+        <ul class="nav nav-list">
+          <li class="nav-header">I am logged in as</li>
+          <li><a href="#"><i class="icon-user"></i> Username</a></li>
+          <li class="divider"></li>
+          <li><input type="submit" value="Log out."></li>
+        </ul>
+</div>
+
+<div style="padding: 8px 0;" class="well">
+        <ul class="nav nav-list">
+          <li class="nav-header">My account</li>
+          <li><a href="#"><i class="icon-user"></i> Profile</a></li>
+          <li><a href="#"><i class="icon-cog"></i> Settings</a></li>
+          <li class="divider"></li>
+          <li><a href="#"><i class="icon-flag"></i> Help</a></li>
+        </ul>
+</div>
+</div>
+
+</div>
+
