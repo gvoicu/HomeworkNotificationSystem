@@ -4,6 +4,7 @@ gem "execjs"
 gem "therubyracer"
 gem "rails", "3.2.1"
 gem "devise"
+gem "pg"
 
 gem "sqlite3"
 group :assets do
