@@ -1,18 +1,45 @@
-<h2>Sign up</h2>
+<div class="row"> 
+<div class="span2 offset4"> <h2>Sign up</h2></div>
+</div>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
+  
+  <div class="row">
+  <div class="span2 offset4">
+  <%= f.label :name, :style => "width: 30px;" %>
+  <%= f.text_field :name %>
+  </div>
+  </div>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
+  <div class="row">
+  <div class="span2 offset4">
+  <%= f.label :email, :style => "width: 30px;" %>
+  <%= f.email_field :email %>
+  </div>
+  </div>
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+  <div class="row">
+  <div class="span2 offset4">
+  <%= f.label :password%><br />
+  <%= f.password_field :password %>
+  </div>
+  </div>
 
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
+  <div class="row">
+  <div class="span2 offset4">
+  <%= f.label :password_confirmation %><br />
+  <%= f.password_field :password_confirmation %>
+  </div>
+  </div>
 
-  <div><%= f.submit "Sign up" %></div>
+  <div class="row">
+  <div class="span2 offset4"><%= f.submit "Sign up" %>
+  </div>
+  </div>
 <% end %>
-
+<div class="row">
+  <div class="span2 offset4">
 <%= render "links" %>
+</div>
+</div>
