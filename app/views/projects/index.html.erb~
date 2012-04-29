@@ -39,7 +39,7 @@
               <ul class="dropdown-menu">
                 <li><a href="#">Date</a></li>
                 <li><a href="#">School facts</a></li>
-                <li><a href="#">Priority</a></li
+                <li><a href="#">Priority</a></li>
               </ul>
             </li>
           </ul>
@@ -60,8 +60,8 @@
 		<thead>
 			<tr>
 			<th>Title </th>
-			<th>Deadline</th>
-			<th>Options</th>
+			<th> Deadline</th>
+<th>Title </th>
 			</tr>
 		</thead>
           <% @projects.each do |project| %>
